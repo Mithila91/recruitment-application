@@ -1,5 +1,13 @@
+import Header from './components/Header'
+import FeedBackItem from './components/FeedBackItem'
+
 function App() {
-  return <div className="App">heller</div>
+  return (
+    <>
+      <Header text="not default header" />
+      <FeedBackItem />
+    </>
+  )
 }
 
 export default App
