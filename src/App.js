@@ -2,13 +2,23 @@ import { useState } from 'react'
 import Header from './components/Header'
 import FeedBackList from './components/FeedBackList'
 import FeedBackData from './data/dummyData'
+import FormInput from './components/FormInput'
 
 function App() {
   const [feedback, setFeedback] = useState(FeedBackData)
+
+  const deleteUser = (id) => {
+    //gives the array minus the user being deleted
+    setFeedback(feedback.filter((user) => user.id !== id))
+  }
+
   return (
     <>
       <Header text="not default header" />
-      <FeedBackList feedback={feedback} />
+      <div className="container">
+        <FormInput />
+        <FeedBackList feedback={feedback} handleDelete={deleteUser} />
+      </div>
     </>
   )
 }
