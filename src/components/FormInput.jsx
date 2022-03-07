@@ -4,12 +4,22 @@ import Button from './shared/Button'
 
 export default function FormInput() {
   const [name, setName] = useState('')
-  // const [age, setAge] = useState(0)
-  // const [email, setEmail] = useState('')
-  // const [address, setAddress] = useState('')
+  const [age, setAge] = useState(0)
+  const [email, setEmail] = useState('')
+  const [address, setAddress] = useState('')
 
   const handleNameChange = (e) => {
     setName(e.target.value)
+  }
+  const handleAge = (e) => {
+    setAge(e.target.value)
+  }
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleAddress = (e) => {
+    setAddress(e.target.value)
   }
 
   return (
@@ -17,7 +27,7 @@ export default function FormInput() {
       <Card>
         <form>
           <h2>Add new user</h2>
-          {/* add rating select component here */}
+
           <div className="input-group">
             <input
               onChange={handleNameChange}
@@ -25,10 +35,34 @@ export default function FormInput() {
               type="text"
               placeholder="Name"
             />
-            <Button type="submit" version="secondary">
-              ADD
-            </Button>
           </div>
+          <div className="input-group">
+            <input
+              onChange={handleAge}
+              value={age}
+              type="number"
+              placeholder="age"
+            />
+          </div>
+          <div className="input-group">
+            <input
+              onChange={handleEmail}
+              value={email}
+              type="email"
+              placeholder="email"
+            />
+          </div>
+          <div className="input-group">
+            <input
+              onChange={handleAddress}
+              value={address}
+              type="text"
+              placeholder="adress"
+            />
+          </div>
+          <Button type="submit" version="secondary">
+            ADD
+          </Button>
         </form>
       </Card>
     </div>
