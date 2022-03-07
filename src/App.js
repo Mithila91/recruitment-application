@@ -6,6 +6,9 @@ import FormInput from './components/FormInput'
 
 function App() {
   const [feedback, setFeedback] = useState(FeedBackData)
+  const addUser = (newUser) => {
+    console.log(newUser)
+  }
 
   const deleteUser = (id) => {
     //gives the array minus the user being deleted
@@ -16,7 +19,7 @@ function App() {
     <>
       <Header text="not default header" />
       <div className="container">
-        <FormInput />
+        <FormInput handleAdd={addUser} />
         <FeedBackList feedback={feedback} handleDelete={deleteUser} />
       </div>
     </>

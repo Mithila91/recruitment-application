@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 
-export default function FormInput() {
+export default function FormInput({ handleAdd }) {
   const [name, setName] = useState('')
   const [age, setAge] = useState(0)
   const [email, setEmail] = useState('')
@@ -17,15 +17,28 @@ export default function FormInput() {
   const handleEmail = (e) => {
     setEmail(e.target.value)
   }
-
   const handleAddress = (e) => {
     setAddress(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newUser = {
+      id: null,
+      name: '',
+      email: '',
+      age: 0,
+      address: '',
+    }
+    handleAdd(newUser)
+    setName('')
   }
 
   return (
     <div>
       <Card>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Add new user</h2>
 
           <div className="input-group">
@@ -57,7 +70,7 @@ export default function FormInput() {
               onChange={handleAddress}
               value={address}
               type="text"
-              placeholder="adress"
+              placeholder="address"
             />
           </div>
           <Button type="submit" version="secondary">
