@@ -1,5 +1,6 @@
-import Card from './shared/Card'
 import { useState } from 'react'
+import Card from './shared/Card'
+import Button from './shared/Button'
 
 export default function FormInput() {
   const [name, setName] = useState('')
@@ -24,7 +25,9 @@ export default function FormInput() {
               type="text"
               placeholder="Name"
             />
-            <button type="submit">Add</button>
+            <Button type="submit" version="secondary">
+              ADD
+            </Button>
           </div>
         </form>
       </Card>
