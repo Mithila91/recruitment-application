@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import Header from './components/Header'
-import FeedBackItem from './components/FeedBackItem'
+import FeedBackList from './components/FeedBackList'
+import FeedBackData from './data/dummyData'
 
 function App() {
+  const [feedback, setFeedback] = useState(FeedBackData)
   return (
     <>
       <Header text="not default header" />
-      <FeedBackItem />
+      <FeedBackList feedback={feedback} />
     </>
   )
 }
