@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
+import UserContext from '../context/UserContext'
 
 export default function FormInput({ handleAdd }) {
+  const { userEdit } = useContext(UserContext)
+
+  useEffect(() => {
+    if (userEdit.edit === true) {
+      setName(userEdit.item.name)
+      setAge(userEdit.item.age)
+      setEmail(userEdit.item.email)
+      setAddress(userEdit.item.address)
+    }
+  }, [userEdit])
+
   const [name, setName] = useState('')
-  const [age, setAge] = useState(0)
+  const [age, setAge] = useState()
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
 
@@ -20,7 +32,6 @@ export default function FormInput({ handleAdd }) {
   const handleAddress = (e) => {
     setAddress(e.target.value)
   }
-
   const handleSubmit = (e) => {
     e.preventDefault()
 

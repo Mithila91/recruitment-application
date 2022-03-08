@@ -4,6 +4,7 @@ import Header from './components/Header'
 import UserList from './components/UserList'
 import dummyData from './data/dummyData'
 import FormInput from './components/FormInput'
+import { UserProvider } from './context/UserContext'
 
 function App() {
   const [users, setUser] = useState(dummyData)
@@ -20,13 +21,13 @@ function App() {
   }
 
   return (
-    <>
+    <UserProvider>
       <Header text="Recruitment App" />
       <div className="container">
         <FormInput handleAdd={addUser} />
         <UserList users={users} handleDelete={deleteUser} />
       </div>
-    </>
+    </UserProvider>
   )
 }
 
