@@ -10,7 +10,7 @@ export default function UserItem({ item, handleDelete }) {
   const { updateUser } = useContext(UserContext)
   return (
     <Card reverse={true}>
-      <div className="num-display">{item.id}</div>
+      <div className="display"></div>
       <button onClick={() => updateUser(item)} className="edit">
         <FaEdit color="white" />
       </button>

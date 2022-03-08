@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
+import { FaSearch } from 'react-icons/fa'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import UserContext from '../context/UserContext'
@@ -51,8 +52,12 @@ export default function FormInput({ handleAdd }) {
   return (
     <div>
       <Card>
-        <form onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit}>
           <h2>Add new user</h2>
+          <div className="search-box">
+            <FaSearch color="grey" className="search" />
+            <input type="search" />
+          </div>
 
           <div className="input-group">
             <input

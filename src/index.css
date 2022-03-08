@@ -14,7 +14,10 @@ body {
   color: #fff;
   line-height: 1.6;
 }
-
+h2 {
+  display: flex;
+  justify-content: space-around;
+}
 ul {
   list-style: none;
 }
@@ -54,7 +57,7 @@ header {
   text-align: center;
 }
 
-.num-display {
+.display {
   position: relative;
   background: #f4f4f4;
   width: 50px;
@@ -67,8 +70,8 @@ header {
   transition: 0.3s;
 }
 
-.num-display {
-  background: #ff6a95;
+.display {
+  background: #98751c;
   color: #fff;
 }
 
@@ -76,10 +79,15 @@ header {
   display: flex;
   flex-direction: column;
 }
-
+.form-container {
+  display: grid;
+  grid-gap: 10px;
+}
 .input-group {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
   /* border: 1px solid #ccc; */
   padding: 8px 10px;
   margin-bottom: 10px;
@@ -90,13 +98,25 @@ input {
   flex-grow: 2;
   border: none;
   font-size: 16px;
+  border-bottom: 1px solid #ccc;
 }
 
 input:focus {
   outline: none;
 }
 
-.num-display {
+input::placeholder {
+  padding: 10px;
+}
+
+.search-box {
+  margin: 0 auto;
+  padding: 8px 10px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.display {
   position: absolute;
   top: -10px;
   left: -10px;
@@ -115,19 +135,24 @@ input:focus {
 .edit {
   right: 40px;
 }
+
+.search {
+  position: absolute;
+  display: flex;
+}
 .btn-container {
   display: flex;
   justify-content: center;
 }
 
 .btn {
-  color: #fff;
   border: 0;
   border-radius: 8px;
   color: #fff;
   width: 100px;
   height: 40px;
   cursor: pointer;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .btn-primary {
@@ -135,7 +160,7 @@ input:focus {
 }
 
 .btn-secondary {
-  background: #ff6a95;
+  background: #98751c;
 }
 
 .btn:hover {
@@ -143,56 +168,9 @@ input:focus {
   opacity: 0.9;
 }
 
-.btn:disabled {
-  background-color: #cccccc;
-  color: #333;
-  cursor: auto;
-}
-
-.btn:disabled:hover {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.message {
-  padding-top: 10px;
-  text-align: center;
-  color: rebeccapurple;
-}
-
-.about-link {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.about-link a {
-  color: #fff;
-  cursor: pointer;
-}
-
-.about-link a:hover {
-  color: #ff6a95;
-}
-
-.about h1 {
-  margin-bottom: 20px;
-}
-
-.about p {
-  margin: 10px 0;
-}
-
 @media (max-width: 600px) {
   .rating li {
     margin: 10px 3px;
-  }
-
-  .rating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0 40px;
   }
 
   .input-group input {
