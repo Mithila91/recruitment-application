@@ -1,4 +1,4 @@
-const FeedBackData = [
+const dummyData = [
   {
     id: 1,
     name: 'mithila',
@@ -22,4 +22,4 @@ const FeedBackData = [
   },
 ]
 
-export default FeedBackData
+export default dummyData

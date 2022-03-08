@@ -80,8 +80,9 @@ header {
 .input-group {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 8px 10px;
+  margin-bottom: 10px;
   border-radius: 8px;
 }
 
@@ -113,6 +114,10 @@ input:focus {
 
 .edit {
   right: 40px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .btn {

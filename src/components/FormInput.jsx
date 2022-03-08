@@ -50,24 +50,21 @@ export default function FormInput({ handleAdd }) {
               type="text"
               placeholder="Name"
             />
-          </div>
-          <div className="input-group">
+
             <input
               onChange={handleAge}
               value={age}
               type="number"
               placeholder="age"
             />
-          </div>
-          <div className="input-group">
+
             <input
               onChange={handleEmail}
               value={email}
               type="email"
               placeholder="email"
             />
-          </div>
-          <div className="input-group">
+
             <input
               onChange={handleAddress}
               value={address}
@@ -75,9 +72,11 @@ export default function FormInput({ handleAdd }) {
               placeholder="address"
             />
           </div>
-          <Button type="submit" version="secondary">
-            ADD
-          </Button>
+          <div className="btn-container">
+            <Button type="submit" version="secondary">
+              ADD
+            </Button>
+          </div>
         </form>
       </Card>
     </div>

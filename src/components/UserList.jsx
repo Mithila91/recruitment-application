@@ -5,11 +5,11 @@ import UserItem from './UserItem'
 
 export default function UserList({ users, handleDelete }) {
   if (!users || users.length === 0) {
-    return <p>No data</p>
+    return <p>No Users to show</p>
   }
 
   return (
-    <div className="feedback-list">
+    <div className="user-list">
       <AnimatePresence>
         {users.map((item) => (
           <motion.div
