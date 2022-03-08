@@ -19,10 +19,10 @@ export default function UserItem({ item, handleDelete }) {
       </button>
 
       <div className="text-display">
-        <p>name</p> {item.name}
-        <p>age</p> {item.age}
-        <p>email</p> {item.email}
-        <p>address</p>
+        <p>name:</p> {item.name}
+        <p>age:</p> {item.age}
+        <p>email:</p> {item.email}
+        <p>address:</p>
         {item.address}
       </div>
     </Card>

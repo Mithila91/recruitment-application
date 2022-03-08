@@ -5,7 +5,7 @@ import UserItem from './UserItem'
 
 export default function UserList({ users, handleDelete }) {
   if (!users || users.length === 0) {
-    return <p>No Users to show</p>
+    return <p>No Talents to show</p>
   }
 
   return (
