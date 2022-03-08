@@ -4,21 +4,21 @@ const FeedBackData = [
     name: 'mithila',
     age: 5,
     email: 'mithila@gmail.com',
-    address: 'forshaga',
+    address: 'forshagatan 12343',
   },
   {
     id: 2,
     name: 'shanti',
     age: 10,
-    email: 'mithila@gmail.com',
-    address: 'bofors',
+    email: 'Shanti@gmail.com',
+    address: 'boforsgatan 41',
   },
   {
     id: 3,
     name: 'husse',
     age: 15,
-    email: 'mithila@gmail.com',
-    address: 'lysviks',
+    email: 'husse@gmail.com',
+    address: 'lysviksgatan 12342',
   },
 ]
 

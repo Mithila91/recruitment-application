@@ -1,17 +1,17 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { FadeInAnimation } from './shared/Animations'
 import PropTypes from 'prop-types'
-import FeedBackItem from './FeedBackItem'
+import UserItem from './UserItem'
 
-export default function FeedBackList({ feedback, handleDelete }) {
-  if (!feedback || feedback.length === 0) {
+export default function UserList({ users, handleDelete }) {
+  if (!users || users.length === 0) {
     return <p>No data</p>
   }
 
   return (
     <div className="feedback-list">
       <AnimatePresence>
-        {feedback.map((item) => (
+        {users.map((item) => (
           <motion.div
             variants={FadeInAnimation}
             initial="offscreen"
@@ -19,11 +19,7 @@ export default function FeedBackList({ feedback, handleDelete }) {
             exit={{ opacity: 0 }}
             key={item.id}
           >
-            <FeedBackItem
-              key={item.id}
-              item={item}
-              handleDelete={handleDelete}
-            />
+            <UserItem key={item.id} item={item} handleDelete={handleDelete} />
           </motion.div>
         ))}
       </AnimatePresence>
@@ -31,8 +27,8 @@ export default function FeedBackList({ feedback, handleDelete }) {
   )
 }
 
-FeedBackList.propTypes = {
-  feedback: PropTypes.arrayOf(
+UserList.propTypes = {
+  users: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import Card from './shared/Card'
 
-export default function FeedBackItem({ item, handleDelete }) {
+export default function UserItem({ item, handleDelete }) {
   return (
     <Card reverse={true}>
       <div className="num-display">{item.id}</div>
@@ -24,6 +24,6 @@ export default function FeedBackItem({ item, handleDelete }) {
   )
 }
 
-FeedBackItem.prototype = {
+UserItem.prototype = {
   item: PropTypes.object.isRequired,
 }

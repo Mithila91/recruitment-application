@@ -1,22 +1,22 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import Header from './components/Header'
-import FeedBackList from './components/FeedBackList'
+import UserList from './components/UserList'
 import FeedBackData from './data/dummyData'
 import FormInput from './components/FormInput'
 
 function App() {
-  const [feedback, setFeedback] = useState(FeedBackData)
+  const [users, setFeedback] = useState(FeedBackData)
 
   const addUser = (newUser) => {
     newUser.id = uuidv4
     console.log(newUser)
-    setFeedback([newUser, ...feedback])
+    setFeedback([newUser, ...users])
   }
 
   const deleteUser = (id) => {
     //gives the array minus the user being deleted
-    setFeedback(feedback.filter((user) => user.id !== id))
+    setFeedback(users.filter((user) => user.id !== id))
   }
 
   return (
@@ -24,7 +24,7 @@ function App() {
       <Header text="not default header" />
       <div className="container">
         <FormInput handleAdd={addUser} />
-        <FeedBackList feedback={feedback} handleDelete={deleteUser} />
+        <UserList users={users} handleDelete={deleteUser} />
       </div>
     </>
   )
