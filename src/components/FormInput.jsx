@@ -25,14 +25,16 @@ export default function FormInput({ handleAdd }) {
     e.preventDefault()
 
     const newUser = {
-      id: null,
-      name: '',
-      email: '',
-      age: 0,
-      address: '',
+      name,
+      email,
+      age,
+      address,
     }
     handleAdd(newUser)
     setName('')
+    setAge('')
+    setEmail('')
+    setAddress('')
   }
 
   return (

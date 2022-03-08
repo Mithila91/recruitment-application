@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import Header from './components/Header'
 import FeedBackList from './components/FeedBackList'
 import FeedBackData from './data/dummyData'
@@ -6,8 +7,11 @@ import FormInput from './components/FormInput'
 
 function App() {
   const [feedback, setFeedback] = useState(FeedBackData)
+
   const addUser = (newUser) => {
+    newUser.id = uuidv4
     console.log(newUser)
+    setFeedback([newUser, ...feedback])
   }
 
   const deleteUser = (id) => {

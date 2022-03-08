@@ -1,3 +1,5 @@
+import { motion, AnimatePresence } from 'framer-motion'
+import { FadeInAnimation } from './shared/Animations'
 import { FaTimes } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import Card from './shared/Card'

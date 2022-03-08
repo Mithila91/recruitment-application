@@ -1,3 +1,5 @@
+import { motion, AnimatePresence } from 'framer-motion'
+import { FadeInAnimation } from './shared/Animations'
 import PropTypes from 'prop-types'
 import FeedBackItem from './FeedBackItem'
 
@@ -8,9 +10,23 @@ export default function FeedBackList({ feedback, handleDelete }) {
 
   return (
     <div className="feedback-list">
-      {feedback.map((item) => (
-        <FeedBackItem key={item.id} item={item} handleDelete={handleDelete} />
-      ))}
+      <AnimatePresence>
+        {feedback.map((item) => (
+          <motion.div
+            variants={FadeInAnimation}
+            initial="offscreen"
+            animate="onscreen"
+            exit={{ opacity: 0 }}
+            key={item.id}
+          >
+            <FeedBackItem
+              key={item.id}
+              item={item}
+              handleDelete={handleDelete}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   )
 }
