@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { FadeInAnimation } from './shared/Animations'
+import { hoverAnimation } from './shared/Animations'
 import { useContext } from 'react'
 import { FaEdit, FaTimes } from 'react-icons/fa'
 import PropTypes from 'prop-types'
@@ -11,18 +11,30 @@ export default function UserItem({ item, handleDelete }) {
   return (
     <Card reverse={true}>
       <div className="display"></div>
-      <button onClick={() => updateUser(item)} className="edit">
+      <motion.button
+        variants={hoverAnimation}
+        initial="hover"
+        animate="rotateHover"
+        onClick={() => updateUser(item)}
+        className="edit"
+      >
         <FaEdit color="white" />
-      </button>
-      <button onClick={() => handleDelete(item.id)} className="close">
+      </motion.button>
+      <motion.button
+        variants={hoverAnimation}
+        initial="hover"
+        animate="rotateHover"
+        onClick={() => handleDelete(item.id)}
+        className="close"
+      >
         <FaTimes color="white" />
-      </button>
+      </motion.button>
 
       <div className="text-display">
-        <p>name:</p> {item.name}
-        <p>age:</p> {item.age}
-        <p>email:</p> {item.email}
-        <p>address:</p>
+        <p>Name:</p> {item.name}
+        <p>Age:</p> {item.age}
+        <p>Email:</p> {item.email}
+        <p>Address:</p>
         {item.address}
       </div>
     </Card>

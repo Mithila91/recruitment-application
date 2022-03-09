@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import UserContext from '../context/UserContext'
+import { motion } from 'framer-motion'
+import { titleFadeIn } from './shared/Animations'
 
 export default function FormInput({ handleAdd }) {
   const { userEdit } = useContext(UserContext)
@@ -36,13 +38,13 @@ export default function FormInput({ handleAdd }) {
     setAddress('')
   }
 
-  //Search function
-
   return (
     <div>
       <Card>
         <form className="form-container" onSubmit={handleSubmit}>
-          <h2>Add new talent</h2>
+          <motion.h2 variants={titleFadeIn} initial="hidden" animate="visible">
+            Add New Talent
+          </motion.h2>
 
           <div className="input-group">
             <input
@@ -60,7 +62,7 @@ export default function FormInput({ handleAdd }) {
               }}
               value={age}
               type="number"
-              placeholder="age"
+              placeholder="Age"
             />
 
             <input
@@ -69,7 +71,7 @@ export default function FormInput({ handleAdd }) {
               }}
               value={email}
               type="email"
-              placeholder="email"
+              placeholder="Email"
             />
 
             <input
@@ -78,7 +80,7 @@ export default function FormInput({ handleAdd }) {
               }}
               value={address}
               type="text"
-              placeholder="address"
+              placeholder="Address"
             />
           </div>
           <div className="btn-container">

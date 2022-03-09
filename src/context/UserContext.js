@@ -8,7 +8,7 @@ export const UserProvider = ({ children }) => {
     edit: false,
   })
 
-  //eventually make add / delete a provider
+  //do the same thing with add, deltet and search
 
   const updateUser = (item) => {
     setUserEdit({
