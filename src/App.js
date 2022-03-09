@@ -26,10 +26,8 @@ function App() {
   return (
     <UserProvider>
       <Header text="Recruitment App" />
-      <SearchUser />
       <div className="container">
         <FormInput handleAdd={addUser} />
-
         <UserList users={users} handleDelete={deleteUser} />
       </div>
     </UserProvider>

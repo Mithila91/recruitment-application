@@ -20,18 +20,6 @@ export default function FormInput({ handleAdd }) {
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
 
-  const handleNameChange = (e) => {
-    setName(e.target.value)
-  }
-  const handleAge = (e) => {
-    setAge(e.target.value)
-  }
-  const handleEmail = (e) => {
-    setEmail(e.target.value)
-  }
-  const handleAddress = (e) => {
-    setAddress(e.target.value)
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -58,28 +46,36 @@ export default function FormInput({ handleAdd }) {
 
           <div className="input-group">
             <input
-              onChange={handleNameChange}
+              onChange={(e) => {
+                setName(e.target.value)
+              }}
               value={name}
               type="text"
               placeholder="Name"
             />
 
             <input
-              onChange={handleAge}
+              onChange={(e) => {
+                setAge(e.target.value)
+              }}
               value={age}
               type="number"
               placeholder="age"
             />
 
             <input
-              onChange={handleEmail}
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
               value={email}
               type="email"
               placeholder="email"
             />
 
             <input
-              onChange={handleAddress}
+              onChange={(e) => {
+                setAddress(e.target.value)
+              }}
               value={address}
               type="text"
               placeholder="address"
