@@ -5,7 +5,6 @@ import UserList from './components/UserList'
 import dummyData from './data/dummyData'
 import FormInput from './components/FormInput'
 import SearchUser from './components/SearchUser'
-import { FaSearch } from 'react-icons/fa'
 import { UserProvider } from './context/UserContext'
 
 function App() {
@@ -26,6 +25,7 @@ function App() {
   return (
     <UserProvider>
       <Header text="Recruitment App" />
+      <SearchUser />
       <div className="container">
         <FormInput handleAdd={addUser} />
         <UserList users={users} handleDelete={deleteUser} />
